@@ -6,101 +6,166 @@
     <title>Hwang Jen Fung - Resume</title>
     <style>
         body {
-            font-family: sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
         }
         
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+        .container {
+            display: flex;
+            min-height: 100vh;
         }
         
-        header h1 {
-            margin: 0;
-        }
-        
-        header p {
-            margin: 5px 0;
-        }
-        
-        section {
+        .sidebar {
+            background-color: #ffffff;
             padding: 20px;
-            margin: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
-        h2 {
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            margin-bottom: 15px;
+        }
+        
+        .profile h1 {
+            margin: 10px 0;
+            font-size: 24px;
             color: #333;
         }
         
-        ul {
-            list-style-type: none;
+        .profile h2 {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .contact-info {
+            list-style: none;
             padding: 0;
+            margin: 20px 0;
         }
         
-        ul li {
+        .contact-info li {
             margin-bottom: 10px;
+            color: #666;
         }
         
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #333;
+        .contact-info li a {
+            color: #666;
+            text-decoration: none;
+        }
+        
+        .download-cv {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
             color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 40px;
+        }
+        
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .about p {
+            font-size: 16px;
+            color: #666;
+        }
+        
+        .what-i-do {
+            margin-top: 40px;
+        }
+        
+        .what-i-do h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .service {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .service h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .service p {
+            font-size: 14px;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hwang Jen Fung</h1>
-        <p>Motivated Software Engineering student with strong technical skills in programming, web development, and cloud computing.</p>
-        <p>Email: <a href="mailto:laohwang0523@gmail.com">laohwang0523@gmail.com</a></p>
-        <p>Phone: <a href="tel:+60182608822">+6018 260 8822</a></p>
-        <p>Location: Semenyih, Selangor, Malaysia</p>
-        <p><a href="https://www.linkedin.com/in/jen-fung-hwang-7b02a4278/" target="_blank">LinkedIn Profile</a></p>
-    </header>
-    <section>
-        <h2>Education</h2>
-        <p><strong>Universiti Tunku Abdul Rahman</strong></p>
-        <p>Bachelor of Science in Software Engineering, GPA 3.73</p>
-        <p>Oct 2022 - Oct 2025</p>
-    </section>
-    <section>
-        <h2>Core Skills</h2>
-        <ul>
-            <li>HTML, CSS, JavaScript, PHP, Java, C++, SQL, Python, React-Native, JUnit</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Android Mobile Application:</strong> An Android Mobile Development using React-Native and Node.js. Connected to Web-Based API and WebSocket API. (Jun 2024 - Present)</li>
-            <li><strong>Web Application Development:</strong> Built a web application using PHP, HTML, CSS, and JavaScript. (Jan 2024 - May 2024)</li>
-            <li><strong>Software Testing Using JUnit:</strong> Developed and tested a hotel booking application using the JUnit framework. (Jan 2024 - May 2024)</li>
-        </ul>
-    </section>
-    <section>
-        <h2>Certificates</h2>
-        <ul>
-            <li>GDSC Certified: Google Workspace Hackathon 2024</li>
-            <li>Completion of the 2024 Greater Bay Area Summer Program, Georgia Tech Shenzhen</li>
-            <li>Participation in UTAR X SAMSUNG Hackathon 2023</li>
-        </ul>
-    </section>
-    <footer>
-        <p>Languages: Cantonese (fluent), Chinese (fluent), English (fluent), Malay (fluent)</p>
-        <p>&copy; 2024 Hwang Jen Fung</p>
-    </footer>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img src="profile.jpg" alt="Hwang Jen Fung">
+                <h1>Hwang Jen Fung</h1>
+                <h2>Software Engineer</h2>
+            </div>
+            <ul class="contact-info">
+                <li>October 12, 2002</li>
+                <li>Semenyih, Selangor, Malaysia</li>
+                <li><a href="mailto:laohwang0523@gmail.com">laohwang0523@gmail.com</a></li>
+                <li><a href="tel:+60182608822">+6018 260 8822</a></li>
+                <li><a href="https://www.linkedin.com/in/jen-fung-hwang-7b02a4278/">LinkedIn</a></li>
+            </ul>
+            <button class="download-cv">Download CV</button>
+        </aside>
+        <main class="content">
+            <section class="about">
+                <h2>About Me</h2>
+                <p>Motivated Software Engineering student with strong technical skills in programming, web development, and cloud computing.</p>
+            </section>
+            <section class="what-i-do">
+                <h2>What I'm Doing</h2>
+                <div class="services">
+                    <div class="service">
+                        <h3>Web Design</h3>
+                        <p>The most modern and high-quality design made at a professional level.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Web Development</h3>
+                        <p>High-quality development of sites at the professional level.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Mobile Apps</h3>
+                        <p>Professional development of applications for iOS and Android.</p>
+                    </div>
+                    <div class="service">
+                        <h3>Photography</h3>
+                        <p>I make high-quality photos of any category at a professional level.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
