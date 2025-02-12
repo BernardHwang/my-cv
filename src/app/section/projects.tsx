@@ -10,6 +10,7 @@ interface Repo {
 
 
 export const Projects = () => {
+  // @ts-ignore
   const [gitRepos, setGitRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
