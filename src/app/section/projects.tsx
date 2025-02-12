@@ -25,7 +25,7 @@ export const Projects = () => {
           }
         });
   
-        setGitRepos(response.data.map((repo) => ({
+        setGitRepos(response.data.map((repo: Repo) => ({
           name: repo.name,
           html_url: repo.html_url,
           description: repo.description ?? "No Description",
