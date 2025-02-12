@@ -18,28 +18,26 @@ export const Projects = () => {
           auth: process.env.GITHUB_API_TOKEN
         });
   
-        const response = await octokit.request('GET /users/{username}/repos', {
+        const response = await octokit.request<{ data: Repo[] }>('GET /users/{username}/repos', {
           username: 'BernardHwang',
           headers: {
             'X-GitHub-Api-Version': '2022-11-28'
           }
         });
   
-        setGitRepos(
-          response.data.map((repo: any) => ({
-            name: repo.name,
-            html_url: repo.html_url,
-            description: repo.description ?? "No Description",
-          }))
-        );
-        
+        setGitRepos(response.data.map((repo) => ({
+          name: repo.name,
+          html_url: repo.html_url,
+          description: repo.description ?? "No Description",
+        })));
       } catch (error) {
         console.error("Failed to fetch repos:", error);
       }
     };
-
+  
     getGitRepos();
   }, []);
+  
 
   return (
     <section className="flex flex-col items-center justify-center bg-gray-900 text-white py-10">
