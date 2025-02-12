@@ -23,8 +23,6 @@ export const Projects = () => {
     getGitRepos();
   }, []);
 
-  console.log(gitRepos);
-
   return (
     <section className="flex flex-col items-center justify-center bg-gray-900 text-white py-10">
       <h2 className="text-4xl font-bold mb-6">

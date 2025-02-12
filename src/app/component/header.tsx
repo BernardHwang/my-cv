@@ -11,7 +11,7 @@ import {
     NavbarMenuItem,
     Link,
 } from "@heroui/react"
-import { FundProjectionScreenOutlined, HomeOutlined, InfoCircleOutlined, ProfileOutlined } from "@ant-design/icons";
+import { FundProjectionScreenOutlined, InfoCircleOutlined, ProfileOutlined } from "@ant-design/icons";
 
 export const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

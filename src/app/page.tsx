@@ -5,7 +5,7 @@ import { Landing } from "./section/landing";
 import { About } from "./section/about";
 import { Projects } from "./section/projects";
 
-const sections = [
+const sections: any = [
   { id: "landing", component: Landing },
   { id: "about", component: About },
   { id: "projects", component: Projects },
