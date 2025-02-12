@@ -3,7 +3,7 @@ import { Octokit } from 'octokit';
 import React, { useEffect, useState } from 'react';
 
 export const Projects = () => {
-  const [ gitRepos, setGitRepos ] = useState<any[]>([{}]);
+  const [ gitRepos, setGitRepos ] = useState([{}]);
 
   useEffect(() => {
     const getGitRepos = async () => {

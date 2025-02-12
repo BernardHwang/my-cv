@@ -5,14 +5,19 @@ import { Landing } from "./section/landing";
 import { About } from "./section/about";
 import { Projects } from "./section/projects";
 
-const sections: any = [
+type Section = {
+  id: string;
+  component: React.FC;
+};
+
+const sections: Section[] = [
   { id: "landing", component: Landing },
   { id: "about", component: About },
   { id: "projects", component: Projects },
 ];
 
 export const Home = () => {
-  const sectionRefs = useRef<any[]>([]);
+  const sectionRefs = useRef([]);
 
   return (
     <>
