@@ -17,7 +17,7 @@ const sections: Section[] = [
 ];
 
 const Home = () => {
-  const sectionRefs = useRef([]);
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
 
   return (
     <>
