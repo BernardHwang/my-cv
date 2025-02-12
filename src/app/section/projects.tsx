@@ -2,22 +2,34 @@ import { Card, CardBody, CardFooter, CardHeader, Divider, Link } from '@heroui/r
 import { Octokit } from 'octokit';
 import React, { useEffect, useState } from 'react';
 
+interface Repo {
+  name: string;
+  description?: string;
+  html_url: string;
+}
+
+
 export const Projects = () => {
-  const [ gitRepos, setGitRepos ] = useState([{}]);
+  const [gitRepos, setGitRepos] = useState<Repo[]>([]);
 
   useEffect(() => {
     const getGitRepos = async () => {
-      const octokit = new Octokit({
-        auth: process.env.GITHUB_API_TOKEN
-      })
-      
-      const response = await octokit.request('GET /users/{username}/repos', {
-        username: 'BernardHwang',
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
-      })
-      setGitRepos(response.data);
+      try {
+        const octokit = new Octokit({
+          auth: process.env.GITHUB_API_TOKEN
+        });
+  
+        const response = await octokit.request('GET /users/{username}/repos', {
+          username: 'BernardHwang',
+          headers: {
+            'X-GitHub-Api-Version': '2022-11-28'
+          }
+        });
+  
+        setGitRepos(response.data);
+      } catch (error) {
+        console.error("Failed to fetch repos:", error);
+      }
     };
 
     getGitRepos();
