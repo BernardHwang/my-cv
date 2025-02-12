@@ -16,7 +16,7 @@ const sections: Section[] = [
   { id: "projects", component: Projects },
 ];
 
-export const Home = () => {
+const Home = () => {
   const sectionRefs = useRef([]);
 
   return (
@@ -34,6 +34,5 @@ export const Home = () => {
     </>
   );
 }
-
 
 export default Home;
