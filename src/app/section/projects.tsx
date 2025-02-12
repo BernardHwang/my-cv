@@ -3,45 +3,9 @@ import { Octokit } from 'octokit';
 import React, { useEffect, useState } from 'react';
 
 interface Repo {
-  id: number;
-  node_id: string;
   name: string;
-  full_name: string;
-  owner: {
-    login: string;
-    id: number;
-    node_id: string;
-    avatar_url: string;
-    html_url: string;
-  };
-  private: boolean;
   html_url: string;
-  description?: string; // Optional since some repos might not have a description
-  fork: boolean;
-  url: string;
-  stargazers_count: number;
-  watchers_count: number;
-  forks_count: number;
-  open_issues_count: number;
-  language: string | null;
-  topics: string[];
-  visibility: "public" | "private";
-  created_at: string;
-  updated_at: string;
-  pushed_at: string;
-  default_branch: string;
-  has_issues: boolean;
-  has_projects: boolean;
-  has_wiki: boolean;
-  has_pages: boolean;
-  has_downloads: boolean;
-  archived: boolean;
-  disabled: boolean;
-  permissions: {
-    admin: boolean;
-    push: boolean;
-    pull: boolean;
-  };
+  description?: string;
 }
 
 export const Projects = () => {
@@ -61,7 +25,14 @@ export const Projects = () => {
           }
         });
   
-        setGitRepos(response.data);
+        setGitRepos(
+          response.data.map((repo: any) => ({
+            name: repo.name,
+            html_url: repo.html_url,
+            description: repo.description ?? "No Description",
+          }))
+        );
+        
       } catch (error) {
         console.error("Failed to fetch repos:", error);
       }
