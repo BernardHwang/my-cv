@@ -24,7 +24,7 @@ const Home = () => {
       {sections.map(({ id, component: Section }, index) => (
         <section
           key={id}
-          ref={(el) => (sectionRefs.current[index] = el)}
+          ref={(el) => {sectionRefs.current[index] = el;}}
           id={id}
           className="my-10"
         >
